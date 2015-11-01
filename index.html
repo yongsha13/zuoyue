@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>卓越云测评</title>
+	<link rel="stylesheet" href="./css/style.css">	
+</head>
+<body>
+	<div class="header">
+		<div class="banner">
+			<img src="./images/banner.jpg" alt="">
+		</div>		
+	</div>
+	<div class="body">
+		<div class="left-bar">
+			<div class="tabs">
+				<div class="box">
+					<h2><a href="javascript:;"><img src="./images/all.png" alt="">全科</a></h2>
+					<ul>
+						<li><a href="#">课堂作业</a></li>
+						<li class="cur"><a href="#">课堂作业</a></li>
+						<li><a href="#">课堂作业</a></li>
+						<li><a href="#">课堂作业</a></li>
+					</ul>
+				</div>
+				<div class="box cur">
+					<h2><a href="javascript:;"><img src="./images/su.png" alt="">数学</a></h2>
+					<ul>
+						<li>课堂作业</li>
+						<li class="cur">课堂作业</li>
+						<li>课堂作业</li>
+						<li>课堂作业</li>
+					</ul>
+				</div>
+				<div class="box">
+					<h2><a href="javascript:;"><img src="./images/yu.png" alt="">语文</a></h2>
+					<ul>
+						<li>课堂作业</li>
+						<li class="cur">课堂作业</li>
+						<li>课堂作业</li>
+						<li>课堂作业</li>
+					</ul>
+				</div>
+				<div class="box">
+					<h2><a href="javascript:;"><img src="./images/en.png" alt="">英语</a></h2>
+					<ul>
+						<li>课堂作业</li>
+						<li class="cur">课堂作业</li>
+						<li>课堂作业</li>
+						<li>课堂作业</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="main">
+			<h2>学生基本信息</h2>
+			<table>
+				<tr>
+					<th>城市</th>
+					<td colspan="2">广州</td>
+					<th colspan="2">考号</th>
+					<td colspan="2">2015092010000</td>
+				</tr>
+				<tr>
+					<th>姓名</th>
+					<td colspan="2">高旭东</td>
+					<th colspan="2">年级</th>
+					<td colspan="2">五年级</td>
+				</tr>
+			
+					<th>区域</th>
+					<td colspan="2">越秀区</td>
+					<th colspan="2">科目</th>
+					<td colspan="2">数学</td>
+				</tr>
+				<tr>
+					<td></td>
+					<th>学员</th>
+					<th>班级平均分</th>
+					<th>年级平均分</th>
+					<th>班级总分排行</th>
+					<th>年级总分排行</th>
+					<th>难度系数</th>
+				</tr>
+				<tr>
+					<td>总结</td>
+					<td>98.0</td>
+					<td>93.72</td>
+					<td>91.64</td>
+					<td>16</td>
+					<td>41</td>
+					<td>0.11</td>
+				</tr>
+			</table>
+			<h2>课程总结</h2>
+			<table>
+				<tr>
+					<td>
+						高旭东，在本学期数课程学习中共参加15次课后作业测评、1次期中测评、1次期未测评[列出参加考试次数及类型]，班级排名、年级排名。根据以上考试得出本学期数学学科专题掌握程度，具体如下：（列出低于年级平均正确率的专题名称）低于年级平均正确率，此专题为学习短板，需加强学习；（列出高于年级平均正确率的名称）高于平均正确率，已基本掌握。
+					</td>
+				</tr>
+			</table>
+			<h2>课程推荐</h2>
+			<table>
+				<tr>
+					<th>课程名称</th>
+					<th>课程描述</th>
+					<th>操作</th>
+				</tr>
+				<tr>
+					<td>走向名牌初中五年级英语暑假班</td>
+					<td>卓越小学走向名牌实践课程只培优，不补差，因材施教，学员展示与教师教授完美结合。</td>
+					<td><a href="#">点击进入</a></td>
+				</tr>
+				<tr>
+					<td>走向名牌初中五年级英语暑假班</td>
+					<td>卓越小学走向名牌实践课程只培优，不补差，因材施教，学员展示与教师教授完美结合。</td>
+					<td><a href="#">点击进入</a></td>
+				</tr>
+			</table>
+			<h2>课后作业分数统计图</h2>
+			<div class="main-box">
+				<div id="main"></div>
+			</div>			
+		</div>
+	</div>
+	<script type="text/javascript" src="./js/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="./js/event.js"></script>
+	<script type="text/javascript" src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+	<script>
+		option = {
+			title:{
+				x: 'center',
+				text:'课后作业分数统计图'
+			},
+		    tooltip : {
+		        trigger: 'axis'
+		    },
+		    calculable : true,
+		    legend: {
+		    	y: 'bottom',
+		        data:['个人成绩','年级平均分']
+		    },
+		    xAxis : [
+		        {
+		            type : 'category',
+		            data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+		        }
+		    ],
+		    yAxis : [
+		        {
+		            type : 'value',
+		            name : '个人成绩',
+		            splitNumber : 10
+		        },
+		        {
+		            type : 'value',
+		            name : '年级平均分',
+		            splitNumber : 10
+		        }
+		    ],
+		    series : [
+		        {
+		            name:'个人成绩',
+		            type:'bar',
+		            barGap:'30%',
+		            barCategoryGap:'60%',
+		            smooth:true,
+		            itemStyle:{
+		            	normal:{
+		            		color:'#4fc2ee'	
+		            	},
+		            	emphasis:{
+		            		color:'#afe5fa'
+		            	}
+		            },
+		            data:[70, 75, 79, 80, 90, 88, 80, 76, 87, 90, 83, 92]
+		        },
+		        {
+		            name:'年级平均分',
+		            type:'line',
+		            yAxisIndex: 1,
+		            itemStyle:{
+		            	normal:{
+		            		color:'#feaf6a'	
+		            	},
+		            	emphasis:{
+		            		color:'#f8cca6'
+		            	}
+		            },
+		            data:[77, 72, 79, 83, 93, 45, 80, 75, 40, 92, 90, 95]
+		        }
+		    ]		    
+		};
+		require.config({
+            paths: {
+                echarts: 'http://echarts.baidu.com/build/dist'
+            }
+        });
+		setTimeout(function(){
+			require(
+					[
+						'echarts',
+						'echarts/chart/line',   // 按需加载所需图表，如需动态类型切换功能，别忘了同时加载相应图表
+						'echarts/chart/bar'
+					],
+					function (ec) {
+						var myChart = ec.init(document.getElementById('main'));
+
+						myChart.setOption(option);
+					}
+			);
+		},800);
+
+
+	</script>
+</body>
+</html>
